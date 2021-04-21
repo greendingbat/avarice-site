@@ -10,14 +10,48 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  
+  <script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("May 1, 2021 9:00:00").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get today's date and time
+		var now = new Date().getTime();
+
+	  // Find the distance between now and the count down date
+	  var distance = countDownDate - now;
+
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Display the result in the element with id="timer"
+	  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+	  + minutes + "m " + seconds + "s ";
+
+	  // If the count down is finished, write some text
+	  if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("banner").innerHTML = "CYBERKVLT OUT NOW";
+		document.getElementById("timer").innerHTML = "";
+		
+	  }
+		}, 1000);
+	</script>
 
 </head>
 
 <body style="background-color:black">
   <div class="ui container">
 	<div>
-		<img class="ui centered image" src="avarice_header.png" style="margin-bottom:-3em;" alt="avarice_header" />
-		<h1 class="centered" style="color:white; text-align:center;">CYBERKVLT OUT MAY 1ST 9:00PM</h1>
+		<img class="ui centered image" src="avarice_header.png" style="margin-bottom:-3em;" height="150" alt="avarice_header" />
+		<h1 id="banner" class="centered" style="color:white; text-align:center;">CYBERKVLT OUT MAY 1ST 9:00PM</h1>
+		<h1 style="color:white; text-align:center; margin-top:-15px"><p id="timer"></p></h1>
 		<img class="ui centered image" src="avarice_logo.png" style="margin-bottom:25px;" height="380" alt="avarice_logo" />
 	</div>
 	<div class="ui three column center aligned doubling stackable grid container">
@@ -46,8 +80,8 @@
 			</form>
 		</div>
 	</div>
-	<div style="margin-top:60px; margin-bottom:55px;">
-		<h4 style="color:grey; text-align:center;"><a style="color:grey"; href="mailto:avaricemusic1@gmail">contact</a></h6>
+	<div style="margin-top:30px; margin-bottom:45px;">
+		<h3 style="color:grey; text-align:center;"><a style="color:grey"; href="mailto:avaricemusic1@gmail">contact</a></h6>
 	</div>
   </div>
 </div>
