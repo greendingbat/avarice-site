@@ -24,8 +24,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex; */
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +65,41 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.moving-text::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes scrolling {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.moving-text {
+  height: 80vh;
+  overflow: hidden;
+  text-align: justify;
+  /* background-color: white; */
+  display: block;
+}
+
+.message-container1 {
+  padding: 1rem;
+  /* height: 100%; */
+  animation: scrolling 100s linear 0s infinite forwards;
+  overflow: hidden;
+  /* background-color: green; */
+}
+
+.message-container2 {
+  padding: 1rem;
+  /* height: 100%; */
+  animation: scrolling 100s linear 0s infinite forwards;
+  overflow: hidden;
+  /* background-color: blue; */
 }
