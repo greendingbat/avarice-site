@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { EIGHTFOLD } from "./consts";
+// import { EIGHTFOLD } from "./consts";
 import { getMessage } from "./api";
 
 function App() {
